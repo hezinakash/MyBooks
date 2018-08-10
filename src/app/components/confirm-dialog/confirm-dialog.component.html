@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="message">
+    {{ message }}
+  </div>
+  <div class="btns">
+    <button mat-raised-button 
+            class="yes"
+            color="primary"
+            (click)="onConfirm()">
+            {{ yesLabel }}
+    </button>
+    <button mat-raised-button
+            class="no"
+            color="warn"
+            (click)="onCancel()">
+            {{ noLabel }}
+    </button>
+  </div>
+</div>

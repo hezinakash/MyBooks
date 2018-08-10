@@ -1,0 +1,21 @@
+<div class="container">
+  <h1 class="title">
+    {{ title }}
+  </h1>
+  <div class="content">
+    <button mat-mini-fab
+            color="primary"
+            (click)="onAdd()"
+            matTooltip="{{ addTitle }}"
+            matTooltipPosition="below">
+            <mat-icon>add</mat-icon>
+    </button>
+    <div class="books-list">
+      <book-single *ngFor="let book of books; trackBy: trackByFunc" 
+                    [book]="book"
+                    (edit)="onEdit(book)"
+                    (delete)="onDelete(book)">
+      </book-single>
+    </div>
+  </div>
+</div>
