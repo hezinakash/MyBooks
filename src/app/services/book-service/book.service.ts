@@ -7,7 +7,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { of } from 'rxjs';
 
 const INIT_COUNTER_VAL = 2;
-const FILE_PATH = "../../assets/books.json";
+const FILE_PATH = "./assets/books.json";
 
 @Injectable({
   providedIn: 'root'
