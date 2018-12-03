@@ -1,6 +1,6 @@
 import { take, map } from 'rxjs/operators';
 import { BookService } from './../../services/book-service/book.service';
-import { IBook, BookModule } from './../../modules/book/book.module';
+import { IBook, Book } from './../../models/book';
 import { InputFieldValidators } from './../../validators/inputFieldValidators';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, Validators, AbstractControl, ValidationErrors } from '@angular/forms';
@@ -13,7 +13,7 @@ import { Observable } from 'rxjs';
 })
 export class BookFormComponent implements OnInit {
 
-  @Input("book") book: BookModule;
+  @Input("book") book: Book;
   @Output("onsubmit") submit = new EventEmitter<any>();
 
   bookForm;

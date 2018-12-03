@@ -1,4 +1,4 @@
-import { BookModule } from './../../modules/book/book.module';
+import { Book } from './../../models/book';
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
@@ -8,9 +8,9 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 })
 export class BookSingleComponent {
 
-  @Input("book") book: BookModule;
-  @Output("edit") edit = new EventEmitter<BookModule>();
-  @Output("delete") delete= new EventEmitter<BookModule>();
+  @Input("book") book: Book;
+  @Output("edit") edit = new EventEmitter<Book>();
+  @Output("delete") delete= new EventEmitter<Book>();
 
   editTitle: string;
   deleteTitle: string;

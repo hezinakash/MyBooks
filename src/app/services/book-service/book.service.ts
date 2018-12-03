@@ -1,7 +1,6 @@
 import { take, map } from 'rxjs/operators';
 import { JsonFileService } from './../jsonFile-service/json-file.service';
-import { IBook } from './../../modules/book/book.module';
-import { BookModule } from 'src/app/modules/book/book.module';
+import { IBook, Book } from './../../models/book';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { of } from 'rxjs';
@@ -14,7 +13,7 @@ const FILE_PATH = "./assets/books.json";
 })
 export class BookService { 
 
-  booksList: BookModule[];
+  booksList: Book[];
   books$ = new BehaviorSubject(this.booksList);
   counter: number;
 
@@ -30,7 +29,7 @@ export class BookService {
       map(result => {
         if(result) {
           (result.json() as Array<IBook>).forEach(book => {
-            this.booksList.push(new BookModule(book));
+            this.booksList.push(new Book(book));
           });
         } 
 
@@ -43,14 +42,14 @@ export class BookService {
   add(newBook: IBook) {
     if(newBook) {
       newBook.id = (++this.counter).toString();
-      const book = new BookModule(newBook);
+      const book = new Book(newBook);
   
       this.booksList.push(book);
       this.emitChange();
     }
   }
 
-  delete(book: BookModule) {
+  delete(book: Book) {
     const index = this.getBookIndex(book.id);
 
     if(index >= 0) {
@@ -66,7 +65,7 @@ export class BookService {
       
               if(index >= 0) {
                 update.id = this.booksList[index].id;
-                this.booksList[index] = new BookModule(update);
+                this.booksList[index] = new Book(update);
                 this.emitChange();
               }
     }

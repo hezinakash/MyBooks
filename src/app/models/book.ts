@@ -1,23 +1,14 @@
-import { NgModule, Inject } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Inject } from '@angular/core';
 
 export interface IBook {
-  id: string;
-  author: string;
-  published_date: Date;
-  title: string;
-}
+    id: string;
+    author: string;
+    published_date: Date;
+    title: string;
+  }
 
-@NgModule({
-  imports: [
-    CommonModule
-  ],
-  declarations: []
-})
-
-export class BookModule {
-
-  private _id: string;
+export class Book {
+    private _id: string;
   private _author: string;
   private _published_date: Date;
   private _title: string;
@@ -56,4 +47,4 @@ export class BookModule {
   set publishedDate(newPublishedDate: Date) {
     this._published_date = newPublishedDate;
   }
- }
+}

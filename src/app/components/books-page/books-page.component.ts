@@ -2,7 +2,7 @@ import { BookService } from './../../services/book-service/book.service';
 import { ConfirmDialogComponent } from './../confirm-dialog/confirm-dialog.component';
 import { EditDialogComponent } from './../edit-dialog/edit-dialog.component';
 import { AddDialogComponent } from './../add-dialog/add-dialog.component';
-import { BookModule } from './../../modules/book/book.module';
+import { Book } from './../../models/book';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { MatDialog } from '@angular/material';
 import { take } from 'rxjs/operators';
@@ -14,7 +14,7 @@ import { take } from 'rxjs/operators';
 })
 export class BooksPageComponent implements OnInit, OnDestroy {
 
-  books: BookModule[];
+  books: Book[];
   title: string;
   addTitle: string;
   observer;
@@ -36,7 +36,7 @@ export class BooksPageComponent implements OnInit, OnDestroy {
     this.service.books$.unsubscribe();
   }
 
-  onEdit(book: BookModule) {
+  onEdit(book: Book) {
     const editDialog = this.dialog.open(EditDialogComponent, {
       data: book
     });
@@ -48,7 +48,7 @@ export class BooksPageComponent implements OnInit, OnDestroy {
               });
   }
 
-  onDelete(book: BookModule) {
+  onDelete(book: Book) {
     const confirmDialog = this.dialog.open(ConfirmDialogComponent, {
       data: book
     });

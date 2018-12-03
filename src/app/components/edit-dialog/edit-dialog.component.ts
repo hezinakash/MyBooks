@@ -1,7 +1,6 @@
-import { IBook } from './../../modules/book/book.module';
 import { Component, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
-import { BookModule } from 'src/app/modules/book/book.module';
+import { Book, IBook } from 'src/app/models/book';
 
 @Component({
   selector: 'app-edit-dialog',
@@ -13,7 +12,7 @@ export class EditDialogComponent {
   title: string;
 
   constructor(public dialogRef: MatDialogRef<EditDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: BookModule) {
+    @Inject(MAT_DIALOG_DATA) public data: Book) {
       this.title = "Edit book";
      }
 
