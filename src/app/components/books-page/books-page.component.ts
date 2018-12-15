@@ -16,6 +16,7 @@ export class BooksPageComponent implements OnInit, OnDestroy {
   title: string;
   addTitle: string;
   observer;
+  backgroundImg = "../../../assets/images/flying-books.jpg";
 
   constructor(private dialog: MatDialog, private service: BookService) {}
 
