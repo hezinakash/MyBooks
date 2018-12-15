@@ -1,31 +1,48 @@
-<div class="container">
-  <div class="details">
-    <div class="basic-details">
-      <div class="title">
-        {{ book.title | english | capitalize }}
-      </div>
-      <div class="author">
-        {{ book.author | english | capitalize }}
-      </div>
+<div class="book">
+  <div class="book-content">
+    <div class="front">
+      <img
+        *ngIf="book && book.imgUrl; else: book_icon"
+        [src]="book.imgUrl"
+        [alt]="book.title | english | capitalize"
+        class="img-fluid"
+      />
+      <ng-template #book_icon>
+        <div class="book-icon">
+          <p>{{ book.title | english | capitalize }}</p>
+        </div>
+      </ng-template>
     </div>
-    <div class="published-date">
-      {{ book.publishedDate | date: 'dd/MM/yyyy' }}
+    <div class="back">
+      <div class="info">
+        <label class="title">{{ book.title | english | capitalize }}</label>
+        <div class="field">
+          <div class="label">Author:</div>
+          <div class="text">{{ book.author | english | capitalize }}</div>
+        </div>
+        <div class="field">
+          <div class="label">Published Date:</div>
+          <div class="text">{{ book.publishedDate | date: "dd/MM/yyyy" }}</div>
+        </div>
+      </div>
     </div>
   </div>
-  <mat-divider [vertical]="true"></mat-divider>
   <div class="btns">
-    <button mat-icon-button
-            (click)="onEdit(book)"
-            matTooltip="{{ editTitle }}"
-            matTooltipPosition="below">
-            <mat-icon>edit</mat-icon>
+    <button
+      mat-icon-button
+      (click)="onDelete(book)"
+      matTooltip="{{ deleteTitle }}"
+      matTooltipPosition="below"
+    >
+      <mat-icon>delete</mat-icon>
     </button>
-    
-    <button mat-icon-button
-            (click)="onDelete(book)"
-            matTooltip="{{ deleteTitle }}"
-            matTooltipPosition="below">
-            <mat-icon>delete</mat-icon>
+    <button
+      mat-icon-button
+      (click)="onEdit(book)"
+      matTooltip="{{ editTitle }}"
+      matTooltipPosition="below"
+    >
+      <mat-icon>edit</mat-icon>
     </button>
   </div>
 </div>

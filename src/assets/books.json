@@ -1,14 +1,58 @@
 [
-    {
-        "id": "1",
-        "author": "hezi nakash@",
-        "published_date": "11/21/1988",
-        "title": "My"
-    },
-    {
-      "id": "2",
-      "author": "hezi nakash",
-      "published_date": "11/21/1988",
-      "title": "My2Dream"
+  {
+    "id": "1",
+    "author": "J. K. Rowling",
+    "published_date": "6/2/1998",
+    "title": "Harry Potter and the Chamber of Secrets",
+    "imgUrl": "http://t1.gstatic.com/images?q=tbn:ANd9GcQ-Bum3HyU3_5OfFpo9qVvzH-kFs1NTD5hGSOpRQ2DQIWiooGZ4"
+  },
+  {
+    "id": "2",
+    "author": "Rhonda Byrne",
+    "published_date": "11/26/2006",
+    "title": "The Secret",
+    "imgUrl": "https://images-na.ssl-images-amazon.com/images/I/51FGx8kUv-L._SX258_BO1,204,203,200_.jpg"
+  },
+  {
+    "id": "3",
+    "author": "Leo Tolstoy",
+    "published_date": "4/1/1877",
+    "title": "Anna Karenina",
+    "imgUrl": "https://images-na.ssl-images-amazon.com/images/I/71rBTsZ5j0L.jpg"
+  },
+  {
+    "id": "4",
+    "author": "Tomi Adeyemi",
+    "published_date": "3/6/2018",
+    "title": "Children of Blood and Bone",
+    "imgUrl": "http://t2.gstatic.com/images?q=tbn:ANd9GcSLBXEVAdXZRnqQTPJ_Gjjmr9Po2ShY8kw6SFU7IZR9_1i33o9l"
+  },
+  {
+    "id": "5",
+    "author": "J. K. Rowling",
+    "published_date": "7/8/2000",
+    "title": "Harry Potter and the Goblet of Fire",
+    "imgUrl": "http://t1.gstatic.com/images?q=tbn:ANd9GcS-gR4DLZ2y075g41UTW5ZlpzrS7_DqpAJAGJRH6qEQR0xCY0w8"
+  },
+  {
+    "id": "6",
+    "author": "Myla Goldberg",
+    "published_date": "5/25/2000",
+    "title": "Bee Season: A Novel",
+    "imgUrl": "http://t3.gstatic.com/images?q=tbn:ANd9GcQDWC6fjZr8GmuHPCjjlAHtnYrgA_dwklHKGqgf7yBcxDYO6EBR"
+  },
+  {
+    "id": "7",
+    "author": "Lewis Carroll",
+    "published_date": "11/26/1865",
+    "title": "Alice's Adventures in Wonderland",
+    "imgUrl": "https://images.penguinrandomhouse.com/cover/9780147515872"
+  },
+  {
+    "id": "8",
+    "author": "Mark Twain",
+    "published_date": "12/10/1884",
+    "title": "Adventures of Huckleberry Finn",
+    "imgUrl": "https://c8.alamy.com/comp/FKCE7A/1880s-usa-adventures-of-huckleberry-finn-book-cover-FKCE7A.jpg"
   }
-  ]
+]

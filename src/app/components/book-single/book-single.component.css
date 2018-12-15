@@ -1,58 +1,154 @@
-
-.container,
-.btns,
-.details {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+.book {
+  position: relative;
+  padding: 0.5rem;
+  perspective: 500px;
+  transition: transform 1s;
+  transform-style: preserve-3d;
 }
 
-.container {
-    margin: 5px;
-    background: #e5e4e4;
-    -webkit-box-shadow: 0 0 5px 0 #7c7c7c;
-            box-shadow: 0 0 5px 0 #7c7c7c;
+.book-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 
-.details {
-    width: 100%;
-    padding: 5px;
+.book:hover,
+.book:active {
+  transform: rotateY(180deg);
+  transition: transform 0.5s;
 }
 
-.basic-details {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+.book-content .front,
+.book-content .back {
+  height: 100%;
+  width: 100%;
+  background: white;
+  color: #03446a;
+  text-align: center;
+  border-radius: 5px;
+  backface-visibility: hidden;
 }
 
-.published-date {
-    margin-left: auto;
-    font-size: 1rem;
+.book-content .front {
+  min-height: 14rem;
 }
 
-.title {
-    font-size: 1.3rem;
-    font-weight: bold;
+.book-content .back {
+  position: absolute;
+  top: 0;
+  background: #c4ccd0;
+  transform: rotateY(180deg);
+  text-align: left;
+  padding: 0.6rem;
+  font-size: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  color: #3a3a3a;
 }
 
-.author {
-    font-size: 0.8rem;
+.book-content .book-icon {
+  width: 100%;
+  min-height: 14rem;
+  max-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
 }
 
-.btns {
-    padding: 5px;
+.book-icon p {
+  font-size: 1.2rem;
+  font-weight: 400;
 }
 
-.btns button {
-    margin: 2px;
+.book-content .img-fluid {
+  border-radius: inherit;
+  max-height: 100%;
+}
+
+.book-content .info {
+  margin: 0.6rem 0.3rem;
+  overflow: hidden;
+}
+
+.book-content .info p {
+  margin-bottom: 0.5rem;
+  font-size: 0.8rem;
+}
+
+.book-content .info p:first-child {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.book .btns {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  visibility: hidden;
+}
+
+.book:hover .btns {
+  visibility: visible;
+}
+
+.book .field {
+  margin-bottom: 0.3rem;
+}
+
+.field .label {
+  font-size: 0.7rem;
+  font-weight: bold;
+}
+
+.info .title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #181818;
+  white-space: nowrap;
+}
+
+.book:hover .title {
+  animation: move 10s linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes move {
+  0% {
+    margin-left: 100%;
+  }
+
+  100% {
+    margin-left: -250%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .book-content .front,
+  .book-content .book-icon {
+    min-height: 11.5rem;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .book-content .front,
+  .book-content .book-icon {
+    min-height: 17rem;
+  }
+}
+
+@media screen and (min-width: 992px) and (orientation: landscape) {
+  .book-content .front,
+  .book-content .book-icon {
+    min-height: 17rem;
+  }
+}
+
+@media screen and (min-width: 1200px) and (orientation: landscape) {
+  .book-content .front,
+  .book-content .book-icon {
+    min-height: 12.5rem;
+  }
 }

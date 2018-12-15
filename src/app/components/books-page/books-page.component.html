@@ -1,21 +1,30 @@
+<mat-toolbar>
+  <span>{{ title }}</span>
+  <button mat-button color="primary" (click)="onAdd()" class="addBtn">
+    <mat-icon>add</mat-icon> Add a book
+  </button>
+</mat-toolbar>
+<img
+  src="../../../assets/images/flying-books.jpg"
+  class="img-fluid background-img"
+/>
 <div class="container">
-  <h1 class="title">
-    {{ title }}
-  </h1>
-  <div class="content">
-    <button mat-mini-fab
-            color="primary"
-            (click)="onAdd()"
-            matTooltip="{{ addTitle }}"
-            matTooltipPosition="below">
-            <mat-icon>add</mat-icon>
-    </button>
-    <div class="books-list">
-      <book-single *ngFor="let book of books; trackBy: trackByFunc" 
-                    [book]="book"
-                    (edit)="onEdit(book)"
-                    (delete)="onDelete(book)">
-      </book-single>
+  <div class="row">
+    <div class="col-8 col-md-12 books">
+      <div class="row">
+        <div
+          class="col-md-3 col-xl-2"
+          *ngFor="let book of books; trackBy: trackByFunc"
+        >
+          <book-single
+            [book]="book"
+            (edit)="onEdit(book)"
+            (delete)="onDelete(book)"
+          >
+          </book-single>
+        </div>
+        <h3 *ngIf="!hasBooks()">Please add a book...</h3>
+      </div>
     </div>
   </div>
 </div>

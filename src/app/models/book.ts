@@ -1,23 +1,26 @@
-import { Inject } from '@angular/core';
+import { Inject } from "@angular/core";
 
 export interface IBook {
-    id: string;
-    author: string;
-    published_date: Date;
-    title: string;
-  }
+  id: string;
+  author: string;
+  published_date: Date;
+  title: string;
+  imgUrl: string;
+}
 
 export class Book {
-    private _id: string;
+  private _id: string;
   private _author: string;
-  private _published_date: Date;
+  private _publishedDate: Date;
   private _title: string;
+  private _imgUrl: string;
 
-  constructor(@Inject('IBook') iBook: IBook) {
+  constructor(@Inject("IBook") iBook: IBook) {
     this._id = iBook.id;
     this._author = iBook.author;
-    this._published_date = iBook.published_date;
+    this._publishedDate = iBook.published_date;
     this._title = iBook.title;
+    this._imgUrl = iBook.imgUrl;
   }
 
   get id(): string {
@@ -29,10 +32,14 @@ export class Book {
   }
 
   get publishedDate(): Date {
-    return this._published_date;
+    return this._publishedDate;
   }
 
-  get title(): string{
+  get imgUrl(): string {
+    return this._imgUrl;
+  }
+
+  get title(): string {
     return this._title;
   }
 
@@ -45,6 +52,6 @@ export class Book {
   }
 
   set publishedDate(newPublishedDate: Date) {
-    this._published_date = newPublishedDate;
+    this._publishedDate = newPublishedDate;
   }
 }

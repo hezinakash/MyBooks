@@ -1,4 +1,37 @@
+.books {
+  margin-top: 1rem;
+  padding: 2rem;
+  background: #6a6364db;
+  border-radius: 8px;
+  overflow: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
 
-.books-list {
-    margin-top: 10px;
+.books > .row {
+  max-height: 27rem;
+  overflow: auto;
+}
+
+.addBtn {
+  vertical-align: middle;
+  font-size: 0.9rem;
+  margin-left: auto;
+  color: #6a6364db;
+}
+
+.addBtn mat-icon {
+  font-size: 1.3rem;
+}
+
+.background-img {
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+}
+
+h3 {
+  margin: 0 auto;
 }
