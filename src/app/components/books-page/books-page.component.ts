@@ -21,7 +21,7 @@ export class BooksPageComponent implements OnInit, OnDestroy {
   constructor(private dialog: MatDialog, private service: BookService) {}
 
   ngOnInit() {
-    this.title = "Books list";
+    this.title = "My Books";
     this.addTitle = "Add";
 
     this.observer = this.service.books$.subscribe(result => {
